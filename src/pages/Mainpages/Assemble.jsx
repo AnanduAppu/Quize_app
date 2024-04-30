@@ -1,38 +1,42 @@
-import React, { useEffect, useState } from "react";
-import Cards from "../Quiz/Cards";
+import React, { useContext, useEffect, useState } from "react";
+import Clintcontex from "../../../Clentcontex/Clientcontex";
+import CardsClone from "./Cardclone";
+import Cards from "./Cards";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
 
+
 function Assemble() {
-    const [width, setWidth] = useState(100);
+
+  const {  isRunning, setIsRunning, width, setWidth,initialWidth,hidePogress, setHidePogress } = useContext(Clintcontex )
+  
 
     useEffect(() => {
-      const timer = setTimeout(() => {
-        setWidth((prevWidth) => {
-          if (prevWidth > 0) {
-            return prevWidth - 1;
-          } else {
-            return 0;
-          }
-        });
-      }, 50);
+      let timer;
+      if (isRunning && width > 0) {
+        timer = setTimeout(() => {
+          setWidth((prevWidth) => prevWidth - 1);
+        }, 50);
+      }
   
       return () => clearTimeout(timer);
-    }, [width]); 
+    }, [width, isRunning]); 
+
+
 
   return (
     <div className="h-[100vh] w-[100%] bg-gray-950">
-      <div className="w-full  rounded-full h-2.5 dark:bg-gray-700 py-1 ">
+      <div className={`w-full  rounded-full h-2.5 dark:bg-gray-700 py-1 ${hidePogress?`hidden`:``}`}>
        
         <div
-          className="bg-yellow-50 h-2.5 rounded-full"
+          className="bg-yellow-50 h-2.5 rounded-full "
           style={{ width: `${width}%` }}
         ></div>
-         
+       
       </div>
       <Navbar/>
-      <div className=" h-[88vh] bg-purple-600 rounded-2xl mx-1 ">
-        <Cards/>
+      <div className=" h-[86vh] bg-purple-950 rounded-2xl mx-1 ">
+        <CardsClone/>
       </div>
 <Footer/>
     </div>

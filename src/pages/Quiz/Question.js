@@ -1,11 +1,29 @@
-import React from 'react'
+const quiz =[
+  {
+      question:"Who invented light?",
+      answer:"Thomas Edison ",
+      id:20,
+      colour:"SlateBlue"
+  }  , 
+  {
+      question:"Who wrote macbeth?",
+      answer:"William Shakespeare",
+       id:21,
+       colour:"Orange"
+  },
+  {
+      question:"Which is the longest river in the world?",
+      answer:"Nile",
+       id:22,
+       colour:"red"
+  },
+  {
+      question:"The story of my experiments with truth is the autobiography of...?",
+      answer:"Mahathma Gandhi",
+      id:23,
+      colour:"blue"
+  }
+      
+  ]
 
-function Question() {
-  return (
-    <div className="flex justify-center items-center h-[50vh]">
-    <h1 className="text-2xl font-bold ">Who invented light </h1>
-  </div>
-  )
-}
-
-export default Question
+  export default quiz
