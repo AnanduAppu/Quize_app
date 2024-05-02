@@ -15,7 +15,7 @@ const quiz =[
       question:"Which is the longest river in the world?",
       answer:"Nile",
        id:22,
-       colour:"red"
+       colour:"violet"
   },
   {
       question:"The story of my experiments with truth is the autobiography of...?",
