@@ -27,11 +27,11 @@ function QuesAnswer() {
   const [shuffledQuizData,setshuffledQuizData]=useState(quizData)
   const [QuestionCount, setQuestionCount] = useState(1);
   const [Question, setQuestion] = useState(quizData[0]);
-  const [correctAnswer, setCorrectAnswer] = useState(null);
+  const [correctAnswer, setCorrectAnswer] = useState(null);// state which take correct answer
   const [isClicked, setIsClicked] = useState(false);
   const [correctBlock, setCorrectBlock] = useState(false);
   const [incorrect,setincorrect]=useState(true)
-  const [wrongAnswer,setWrongAnswer]=useState(Number)
+  const [wrongAnswer,setWrongAnswer]=useState(Number)//which take wrong answer
   const extractedData = quizData.map(item => ({
     answer: item.answer,
     id: item.id,
